@@ -27,6 +27,11 @@ function App() {
           <Link to="/about">Learn More</Link>
         </Button>
       </div>
+      <div className="p-4">
+        <Button asChild>
+          <Link to="/profile">Profile</Link>
+        </Button>
+      </div>
     </div>
   );
 }
