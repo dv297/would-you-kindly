@@ -14,6 +14,7 @@ router.get("/", (req, res, next) => {
 
 const mockList = [
   {
+    image: "https://picsum.photos/200/300",
     id: "1",
     title: "Classroom supplies for the Ms. Anthony's 3rd grade class",
     description: "Support Our 3rd Grade Classroom!",
@@ -29,7 +30,40 @@ const mockList = [
 `,
   },
   {
+    image: "https://picsum.photos/200/300",
     id: "2",
+    title: "Help the Johnson Family",
+    description: "Support a Local Family in Need",
+    body: `
+        <p>Meet the Johnson family: a loving family facing tough times after the dad was laid off from his job. With a sudden loss of income, they are struggling to meet basic needs and keep their spirits up. We’re reaching out to our community for help to provide:</p>
+<ul>
+    <li><strong>Groceries:</strong> Ensuring the family has enough food to eat during this challenging time.</li>
+    <li><strong>Utility Bills:</strong> Helping to keep the lights on and the heat running as they navigate this transition.</li>
+    <li><strong>School Supplies:</strong> Supporting the kids as they continue their education from home.</li>
+    <li><strong>Job Search Assistance:</strong> Providing resources for the dad to find new employment opportunities.</li>
+</ul>
+<p>Every donation, big or small, will make a meaningful impact on their lives. Let’s come together to support the Johnson family in this difficult time. Thank you for your kindness and generosity!</p>
+`,
+  },
+  {
+    image: "https://picsum.photos/200/300",
+    id: "3",
+    title: "Help the Johnson Family",
+    description: "Support a Local Family in Need",
+    body: `
+        <p>Meet the Johnson family: a loving family facing tough times after the dad was laid off from his job. With a sudden loss of income, they are struggling to meet basic needs and keep their spirits up. We’re reaching out to our community for help to provide:</p>
+<ul>
+    <li><strong>Groceries:</strong> Ensuring the family has enough food to eat during this challenging time.</li>
+    <li><strong>Utility Bills:</strong> Helping to keep the lights on and the heat running as they navigate this transition.</li>
+    <li><strong>School Supplies:</strong> Supporting the kids as they continue their education from home.</li>
+    <li><strong>Job Search Assistance:</strong> Providing resources for the dad to find new employment opportunities.</li>
+</ul>
+<p>Every donation, big or small, will make a meaningful impact on their lives. Let’s come together to support the Johnson family in this difficult time. Thank you for your kindness and generosity!</p>
+`,
+  },
+  {
+    image: "https://picsum.photos/200/300",
+    id: "4",
     title: "Help the Johnson Family",
     description: "Support a Local Family in Need",
     body: `
