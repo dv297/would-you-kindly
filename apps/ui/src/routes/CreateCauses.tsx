@@ -15,21 +15,22 @@ type Inputs = {
 interface InputProps {
   register: UseFormRegister<Inputs>;
   field: keyof Inputs;
+  label: string;
 }
 
-const FormTextInput = ({ register, field }: InputProps) => {
+const FormTextInput = ({ register, field, label }: InputProps) => {
   return (
     <div className="grid w-full items-center gap-1.5">
-      <Label htmlFor={field}>Title</Label>
+      <Label htmlFor={field}>{label}</Label>
       <Input type="text" id={field} {...register(field)} />
     </div>
   );
 };
 
-const FormTextArea = ({ register, field }: InputProps) => {
+const FormTextArea = ({ register, field, label }: InputProps) => {
   return (
     <div className="grid w-full items-center gap-1.5">
-      <Label htmlFor={field}>Title</Label>
+      <Label htmlFor={field}>{label}</Label>
       <Textarea id={field} {...register(field)} />
     </div>
   );
@@ -67,9 +68,13 @@ const CreateCause = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col justify-normal items-start gap-4"
           >
-            <FormTextInput register={register} field="title" />
-            <FormTextInput register={register} field="description" />
-            <FormTextArea register={register} field="body" />
+            <FormTextInput register={register} field="title" label="Title" />
+            <FormTextInput
+              register={register}
+              field="description"
+              label="Description"
+            />
+            <FormTextArea register={register} field="body" label="Body" />
             <div className="mt-4">
               <Button type="submit">Submit</Button>
             </div>
