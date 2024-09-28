@@ -16,7 +16,7 @@ const mockList = [
   {
     image: "https://picsum.photos/200/300",
     id: "1",
-    title: "Classroom supplies for the Ms. Anthony's 3rd grade class",
+    title: "Ms. Anthony's 3rd grade class",
     description: "Support Our 3rd Grade Classroom!",
     body: `
 <p>Help our 3rd graders thrive and explore the world around them! We’re raising funds to enhance our classroom with essential supplies, engaging educational materials, and exciting hands-on learning experiences. Your generous donations will provide:</p>
