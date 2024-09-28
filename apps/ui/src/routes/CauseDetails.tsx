@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { z } from "zod";
 
@@ -38,6 +38,7 @@ const CauseDetails = () => {
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-3 lg:col-span-2">
           <div className="bg-white px-8 py-4 rounded-xl drop-shadow border-2 border-gray-200">
+            <div className={`bg-[url('${cause.image}')] h-32 w-32`} />
             <h1 className="prose-2xl">{cause.title}</h1>
             <h2 className="prose-lg lead">{cause.description}</h2>
             <div
@@ -50,12 +51,14 @@ const CauseDetails = () => {
           <div className="bg-white px-4 py-2 rounded-xl h-32 drop-shadow-sm border-2 border-gray-200">
             <p className="text-2xl">Help support this cause!</p>
             <div className="mt-4">
-              <Button
-                variant="outline"
-                className="w-full bg-yellow-400 hover:bg-yellow-500"
-              >
-                Donate
-              </Button>
+              <Link to={cause.wishlistUrl}>
+                <Button
+                  variant="outline"
+                  className="w-full bg-yellow-400 hover:bg-yellow-500"
+                >
+                  Donate
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

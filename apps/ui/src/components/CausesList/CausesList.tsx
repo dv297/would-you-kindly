@@ -18,7 +18,7 @@ interface Props {
 const CausesList = (props: Props) => {
   const { causes } = props;
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="w-full flex flex-col gap-4">
       {causes.map((cause) => {
         return (
           <div key={cause.id}>

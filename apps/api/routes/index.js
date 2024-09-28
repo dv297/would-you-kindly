@@ -16,6 +16,8 @@ const mockList = [
   {
     image: "https://picsum.photos/200/300",
     id: "1",
+    wishlistUrl:
+      "https://www.amazon.com/classroom-wish-list-high-school-teachers/s?k=classroom+wish+list+for+high+school+teachers",
     title: "Classroom supplies for the Ms. Anthony's 3rd grade class",
     description: "Support Our 3rd Grade Classroom!",
     body: `
@@ -32,6 +34,8 @@ const mockList = [
   {
     image: "https://picsum.photos/200/300",
     id: "2",
+    wishlistUrl:
+      "https://www.amazon.com/classroom-wish-list-high-school-teachers/s?k=classroom+wish+list+for+high+school+teachers",
     title: "Help the Johnson Family",
     description: "Support a Local Family in Need",
     body: `
@@ -48,6 +52,8 @@ const mockList = [
   {
     image: "https://picsum.photos/200/300",
     id: "3",
+    wishlistUrl:
+      "https://www.amazon.com/classroom-wish-list-high-school-teachers/s?k=classroom+wish+list+for+high+school+teachers",
     title: "Help the Johnson Family",
     description: "Support a Local Family in Need",
     body: `
@@ -64,6 +70,8 @@ const mockList = [
   {
     image: "https://picsum.photos/200/300",
     id: "4",
+    wishlistUrl:
+      "https://www.amazon.com/classroom-wish-list-high-school-teachers/s?k=classroom+wish+list+for+high+school+teachers",
     title: "Help the Johnson Family",
     description: "Support a Local Family in Need",
     body: `
