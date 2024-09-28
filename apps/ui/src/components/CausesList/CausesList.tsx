@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { z } from "zod";
 
 import {
@@ -23,7 +24,9 @@ const CausesList = (props: Props) => {
           <div key={cause.id}>
             <Card>
               <CardHeader>
-                <CardTitle>{cause.title}</CardTitle>
+                <Link to={`/causes/${cause.id}`} className="text-blue-400">
+                  <CardTitle className="prose-2xl">{cause.title}</CardTitle>
+                </Link>
                 <CardDescription>{cause.description}</CardDescription>
               </CardHeader>
               <CardContent dangerouslySetInnerHTML={{ __html: cause.body }} />
