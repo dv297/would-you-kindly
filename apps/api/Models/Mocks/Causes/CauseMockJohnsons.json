@@ -1,9 +1,10 @@
 {
   "id": 1,
   "profileId": 1,
-  "name": "Omegatron Johnson",
+  "title": "Omegatron Johnson",
+  "description": "Please support the Johnson family",
+  "body": "<p>Meet the Johnson family: a loving family facing tough times after the dad was laid off from his job. With a sudden loss of income, they are struggling to meet basic needs and keep their spirits up. We’re reaching out to our community for help to provide:</p><ul>    <li><strong>Groceries:</strong> Ensuring the family has enough food to eat during this challenging time.</li>    <li><strong>Utility Bills:</strong> Helping to keep the lights on and the heat running as they navigate this transition.</li>    <li><strong>School Supplies:</strong> Supporting the kids as they continue their education from home.</li>    <li><strong>Job Search Assistance:</strong> Providing resources for the dad to find new employment opportunities.</li></ul><p>Every donation, big or small, will make a meaningful impact on their lives. Let’s come together to support the Johnson family in this difficult time. Thank you for your kindness and generosity!</p>",
   "wishlistUrl": "https://www.amazon.com/hz/wishlist/ls/PF7MPIGA735J?ref_=wl_share",
-  "story": "Hi, we’re the Johnson family—my husband David, our kids Sophie (8) and Lucas (5), and me, Jennifer. Lately, we’ve hit a rough patch. David lost his job a few months ago, and while I’m working part-time as a nurse, it’s been hard to keep up with bills and everything the kids need.\n\nSophie loves school and reading, and Lucas is excited to start kindergarten, but they both need new backpacks, school supplies, and shoes. We’re also running low on basics like toiletries and non-perishable food.",
-  "imageUrl": "https://rxss.com/wp-content/uploads/2021/08/Logo-RXSS-white-color_2023.png",
+  "image": "https://picsum.photos/200/300",
   "state": "Ohio"
 }

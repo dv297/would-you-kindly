@@ -1,3 +1,3 @@
 class PutCauseContract {}
 
-module.exports = { PutCauseController };
+module.exports = { PutCauseContract };

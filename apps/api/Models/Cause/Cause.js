@@ -1,10 +1,11 @@
 class Cause {
-  constructor(profileId, name, whishlistUrl, story, imageUrl, state) {
-    this.profileId = profileId;
-    this.name = name;
+  constructor(data) {
+    this.profileId = data.profileId;
+    this.title = data.title;
+    this.description = data.description;
+    this.body = data.body;
     this.whishlistUrl = whishlistUrl;
-    this.story = story;
-    this.imageUrl = imageUrl;
+    this.image = image;
     this.state = state;
   }
 }

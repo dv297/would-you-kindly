@@ -4,7 +4,7 @@ const williamsCause = require("../Models/Mocks/Causes/CauseMockWilliams.json");
 
 class CausesController extends BaseController {
   async get(request, response) {
-    return response.send({ causes: [johnsonsCause, williamsCause] });
+    return response.send({ data: [johnsonsCause, williamsCause] });
   }
 }
 

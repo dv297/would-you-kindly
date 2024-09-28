@@ -1,8 +1,8 @@
 class Suggestion {
-  constructor(id, imageUrl, asin, url) {
-    this.id = id;
-    this.imageUrl = imageUrl;
-    this.asin = asin;
-    this.url = url;
+  constructor(data) {
+    this.id = data.id;
+    this.image = data.image;
+    this.asin = data.asin;
+    this.url = data.url;
   }
 }
