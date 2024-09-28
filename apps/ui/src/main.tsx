@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import CreateCause from "./routes/CreateCauses";
+
 import "@/index.css";
 
 import About from "@/routes/About";
@@ -35,6 +37,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/create-cause" element={<CreateCause />} />
       </Routes>
     </Auth0ProviderWithRedirectCallback>
   );
