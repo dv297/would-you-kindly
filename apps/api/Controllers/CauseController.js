@@ -1,8 +1,9 @@
 const { BaseController } = require("./BaseController");
+const mockCause = require("../Models/Mocks/Causes/CauseMockJohnsons.json");
 
 class CauseController extends BaseController {
   async get(request, response) {
-    return response.send({ id: request.params.id });
+    return response.send(mockCause);
   }
 
   async put(request, response) {

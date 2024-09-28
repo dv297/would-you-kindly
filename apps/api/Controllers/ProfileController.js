@@ -1,8 +1,9 @@
 const { BaseController } = require("./BaseController");
+const profileMock = require("../Models/Mocks/ProfileMock.json");
 
 class ProfileController extends BaseController {
   async get(request, response) {
-    return response.send({});
+    return response.send(profileMock);
   }
 
   async put(request, response) {
