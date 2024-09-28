@@ -1,4 +1,5 @@
 const express = require("express");
+const { v4: uuid } = require("uuid");
 
 const router = express.Router();
 
@@ -44,6 +45,17 @@ router.get("/causes", (req, res) => {
   res.json({
     data: mockList,
   });
+});
+
+router.post("/causes", (req, res) => {
+  console.log("hit", req.body);
+  const data = {
+    ...req.body,
+    id: uuid(),
+  };
+
+  mockList.push(data);
+  res.json({ status: "success" });
 });
 
 module.exports = router;
