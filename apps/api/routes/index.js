@@ -52,6 +52,18 @@ router.get("/causes", (req, res) => {
   });
 });
 
+router.get("/causes/:id", (req, res) => {
+  console.log(req.params.id);
+
+  const entry = mockList.find((item) => item.id === req.params.id);
+
+  if (!entry) {
+    return res.status(404).json({ data: null, message: "Not found" });
+  }
+
+  return res.json({ data: entry });
+});
+
 router.post("/causes", (req, res) => {
   console.log("hit", req.body);
   const data = {
