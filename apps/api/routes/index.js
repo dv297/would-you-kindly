@@ -1,5 +1,9 @@
 const express = require("express");
 const { v4: uuid } = require("uuid");
+const suggestionsController = require("../Controllers/SuggestionsController");
+const causeController = require("../Controllers/CauseController");
+const profileController = require("../Controllers/ProfileController");
+const causesController = require("../Controllers/CausesController");
 
 const router = express.Router();
 
@@ -41,6 +45,7 @@ const mockList = [
   },
 ];
 
+// causes
 router.get("/causes", (req, res) => {
   res.json({
     data: mockList,
@@ -56,6 +61,27 @@ router.post("/causes", (req, res) => {
 
   mockList.push(data);
   res.json({ status: "success" });
+  causesController.get();
 });
+
+// Cause
+router.get("/cause/:id", causeController.get);
+
+router.post("/cause", causeController.post);
+
+router.put("/cause", causeController.put);
+
+router.delete("/cause/:id", causeController.delete);
+
+router.get("/cause/:id/suggestions", suggestionsController.get);
+
+// Profile
+router.get("/profile/:id", profileController.get);
+
+router.post("/profile", profileController.post);
+
+router.put("/profile", profileController.put);
+
+router.delete("/profile", profileController.delete);
 
 module.exports = router;
