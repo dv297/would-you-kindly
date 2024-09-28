@@ -88,11 +88,7 @@ const mockList = [
 ];
 
 // causes
-router.get("/causes", (req, res) => {
-  res.json({
-    data: mockList,
-  });
-});
+router.get("/causes", causesController.get);
 
 router.get("/causes/:id", (req, res) => {
   console.log(req.params.id);
