@@ -14,20 +14,20 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 ## Who's on your team?
 *List the full names,  email address & Github username of your teammates*
 
-1.   **Full Name**  || **fullname@company.com**  (or fullname@school.edu if you're a CS student) || **Github Username**
-2. 
-3.
-4.
-5.
+1. Daniel Vu | daniel.vu@mckesson.com
+2. Logan Ballares-Jones | logan.ballare-jones@mckesson.com
+3. Nehemiah Deason | nehemiah.deason@mckesson.com
+4. Cole Skoviak | cole.skoviak@mckesson.com 
 
 <br /><br />
 
 
 ## What is the name of your App?
+Would You Kindly
 
 <br /><br />
 ## What does your app do?
-*Describe in a paragraph or so*
+"Would You Kindly" is a social networking app for connecting people in need with people who want to provide.
 
 <br /><br />
 
