@@ -17,7 +17,7 @@ interface Props {
 const CausesList = (props: Props) => {
   const { causes } = props;
   return (
-    <div className="grid gap-4">
+    <div className="relative w-full overflow-hidden">
       {causes.map((cause) => {
         return (
           <div key={cause.id}>
