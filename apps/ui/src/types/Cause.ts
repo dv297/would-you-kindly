@@ -5,7 +5,8 @@ const Cause = z.object({
   title: z.string(),
   description: z.string(),
   body: z.string(),
-  image: z.string()
+  image: z.string(),
+  wishlistUrl: z.string(),
 });
 
 export default Cause;

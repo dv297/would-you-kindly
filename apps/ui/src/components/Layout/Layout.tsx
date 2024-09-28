@@ -37,10 +37,10 @@ const Layout = () => {
   const { isAuthenticated } = useAuth0();
 
   return (
-    <div className="flex flex-col h-screen w-screen">
-      <nav className="px-4 flex justify-between w-screen border-gray-300 border-2">
+    <div className="flex flex-col h-screen w-screen justify-center">
+      <nav className="px-4 flex justify-between w-screen border-gray-300 border-2 h-24 fixed top-0 start-0 z-50 bg-white">
         <div className="flex-1">
-          <img src="/assets/100.png" alt="Logo" className="h-24" />
+          <img src="/assets/100.png" alt="Logo" className="h-20" />
         </div>
         <NavigationMenu className="flex space-x-6 flex-grow w-full justify-end px-4">
           <NavigationMenuList className="gap-6">
@@ -62,7 +62,7 @@ const Layout = () => {
           </NavigationMenuList>
         </NavigationMenu>
       </nav>
-      <div id="Body" className="bg-gray-100 h-full p-4">
+      <div id="Body" className="bg-gray-100 p-4 h-screen mt-24 overflow-auto">
         <Outlet />
       </div>
     </div>

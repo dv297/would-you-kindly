@@ -1,4 +1,3 @@
-
 import CarouselComp from "@/components/Carousal/Carousel.tsx";
 import CausesList from "@/components/CausesList/CausesList";
 import useCauses from "@/hooks/useCauses";
@@ -12,10 +11,10 @@ function Home() {
 
   return (
     <div>
-      <div id="Body">
-        <CarouselComp causes={data.data} />
+      <CarouselComp causes={data.data} />
+      <div className="w-10/12 mx-auto">
+        <CausesList causes={data.data} />
       </div>
-      <CausesList causes={data.data} />
     </div>
   );
 }
