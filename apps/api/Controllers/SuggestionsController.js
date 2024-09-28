@@ -1,8 +1,9 @@
 const { BaseController } = require("./BaseController");
+const suggestionMock = require("../Models/Mocks/SuggestionMock.json");
 
 class SuggestionsController extends BaseController {
   async get(request, response) {
-    return response.send({ id: request.params.id });
+    return response.send({ suggestions: [suggestionMock] });
   }
 }
 

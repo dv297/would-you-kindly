@@ -10,6 +10,7 @@ import "@/index.css";
 
 import Layout from "@/components/Layout/Layout.tsx";
 import About from "@/routes/About";
+import CauseDetails from "@/routes/CauseDetails.tsx";
 import Home from "@/routes/Home";
 import Login from "@/routes/Login.tsx";
 import Logout from "@/routes/Logout.tsx";
@@ -51,6 +52,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-cause" element={<CreateCause />} />
+          <Route path="/causes">
+            <Route path=":id" element={<CauseDetails />} />
+          </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
         </Route>

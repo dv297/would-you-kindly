@@ -21,10 +21,10 @@ const NavigationMenuLink = (props: NavigationMenuLinkProps) => {
         to={to}
         className={({ isActive }) => {
           if (isActive) {
-            return "underline text-blue-800 underline-offset-4 text-xl";
+            return "underline text-blue-800 underline-offset-4 text-xl text-nowrap";
           }
 
-          return "text-blue-500 text-xl hover:underline";
+          return "text-blue-500 text-xl hover:underline text-nowrap";
         }}
       >
         {children}
