@@ -3,8 +3,7 @@ const mockCause = require("../Models/Mocks/Causes/CauseMockJohnsons.json");
 
 class CauseController extends BaseController {
   async get(request, response) {
-    console.log("ddddd");
-    return response.send(mockCause);
+    return response.send({ data: mockCause });
   }
 
   async put(request, response) {
