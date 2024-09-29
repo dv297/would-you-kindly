@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "^3.658.1",
+    "buffer": "^6.0.3",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -16,6 +17,8 @@
     "express": "~4.16.1",
     "mongodb": "^6.9.0",
     "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "pinata": "^1.4.1",
     "url": "^0.11.4",
     "uuid": "^10.0.0"
   },
