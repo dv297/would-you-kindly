@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const logger = require("morgan");
 
-const MongoClient = require("./mongo/MongoClient");
+const { MongoClient } = require("./mongo/MongoClient");
 const generateSummary = require("./ai/generateSummary");
 const indexRouter = require("./routes/index");
 
@@ -40,7 +40,7 @@ async function main() {
   console.log("MongoDB Connected");
 
   app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`API listening on port ${port}`);
   });
 }
 

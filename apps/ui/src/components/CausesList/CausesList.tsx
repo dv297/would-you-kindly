@@ -21,10 +21,10 @@ const CausesList = (props: Props) => {
     <div className="w-full flex flex-col gap-4">
       {causes.map((cause) => {
         return (
-          <div key={cause.id}>
+          <div key={cause._id}>
             <Card>
               <CardHeader>
-                <Link to={`/causes/${cause.id}`} className="text-blue-400">
+                <Link to={`/causes/${cause._id}`} className="text-blue-400">
                   <CardTitle className="prose-2xl">{cause.title}</CardTitle>
                 </Link>
                 <CardDescription>{cause.description}</CardDescription>
