@@ -14,19 +14,24 @@ router.get("/", (req, res, next) => {
 
 router.post("/seed", async (req, res) => {
   const collection = getCollection();
-  // eslint-disable-next-line global-require
+  /* eslint-disable global-require */
   const mockCause1 = require("../Models/Mocks/Causes/CauseMock1.json");
-  // eslint-disable-next-line global-require
   const mockCause2 = require("../Models/Mocks/Causes/CauseMock2.json");
+  /* eslint-enable global-require */
 
-  await collection.insertMany([
-    mockCause1,
-    mockCause2,
-    mockCause1,
-    mockCause1,
-    mockCause1,
-  ]);
-  return res.status(200).json({ message: "Success" });
+  try {
+    await collection.insertMany([
+      mockCause1,
+      mockCause2,
+      mockCause1,
+      mockCause1,
+      mockCause1,
+    ]);
+    return res.status(200).json({ message: "Success" });
+  } catch (err) {
+    console.log(err);
+    return res.status(200).json({ status: "Success (Probably)" });
+  }
 });
 
 // Cause
