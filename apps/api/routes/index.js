@@ -1,9 +1,14 @@
 const express = require("express");
 const { v4: uuid } = require("uuid");
+<<<<<<< HEAD
 const { getCollection } = require("../mongo/MongoClient");
+=======
+const multer = require("multer");
+>>>>>>> 5450248 (pinata integration)
 const suggestionsController = require("../Controllers/SuggestionsController");
 const profileController = require("../Controllers/ProfileController");
 const causesController = require("../Controllers/CausesController");
+const imageController = require("../Controllers/ImageController");
 
 const router = express.Router();
 
@@ -51,5 +56,10 @@ router.post("/profile", profileController.post);
 router.put("/profile", profileController.put);
 
 router.delete("/profile", profileController.delete);
+
+// Image
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+router.post("/image", upload.single("file"), imageController.post);
 
 module.exports = router;
