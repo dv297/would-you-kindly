@@ -38,7 +38,13 @@ const CauseDetails = () => {
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-3 lg:col-span-2">
           <div className="bg-white px-8 py-4 rounded-xl drop-shadow border-2 border-gray-200">
-            <div className={`bg-[url('${cause.image}')] h-32 w-32`} />
+            <div className="relative h-64 w-full overflow-hidden">
+              <img
+                src={cause.image}
+                alt="Description"
+                className="absolute inset-0 object-cover w-full h-full"
+              />
+            </div>
             <h1 className="prose-2xl">{cause.title}</h1>
             <h2 className="prose-lg lead">{cause.description}</h2>
             <div
