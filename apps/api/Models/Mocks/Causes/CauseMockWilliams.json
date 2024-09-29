@@ -1,9 +1,10 @@
 {
   "id": 2,
   "profileId": 1,
-  "name": "Williams",
+  "title": "Classroom supplies for the Ms. Anthony's 3rd grade class",
+  "description": "Support Ms. Anthony's 3rd grade class",
+  "body": "<p>Help our 3rd graders thrive and explore the world around them! We’re raising funds to enhance our classroom with essential supplies, engaging educational materials, and exciting hands-on learning experiences. Your generous donations will provide:</p><ul>    <li><strong>Books and Reading Materials:</strong> Cultivating a love for reading with diverse and age-appropriate books.</li>    <li><strong>Art Supplies:</strong> Fostering creativity through art projects that allow students to express themselves.</li>    <li><strong>STEM Kits:</strong> Inspiring future innovators with science and engineering activities that spark curiosity.</li>    <li><strong>Field Trips:</strong> Creating unforgettable learning experiences outside the classroom.</li></ul><p>Every dollar counts! Your support will directly impact our students' education and help create a vibrant learning environment. Thank you for making a difference in our classroom!</p>",
   "wishlistUrl": "https://www.amazon.com/hz/wishlist/ls/PF7MPIGA735J?ref_=wl_share",
-  "bio": "Hi, I’m Sarah, a single mom to Emily (12), Jake (9), and Mia (4). This past year has been really tough since I lost my full-time job, and while I’ve been working part-time, it’s still hard to provide everything we need.\n\nEmily’s starting middle school and needs warm clothes and winter gear. Jake is excited for school too but needs supplies like notebooks and art materials. Little Mia is starting preschool, but we can’t afford a backpack or shoes for her right now.\n\nWe’re also running low on basic household items and food. Any help with clothing, school supplies, or essentials would mean the world to us!",
-  "imageUrl": "https://rxss.com/wp-content/uploads/2021/08/Logo-RXSS-white-color_2023.png",
+  "image": "https://picsum.photos/200/300",
   "state": "Kansas"
 }

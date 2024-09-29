@@ -1,9 +1,8 @@
 class Profile {
-  constructor(email, imageUrl, passwordHash, name, bio) {
-    this.email = email;
-    this.imageUrl = imageUrl;
-    this.passwordHash = passwordHash;
-    this.name = name;
-    this.bio = bio;
+  constructor(data) {
+    this.email = data.email;
+    this.image = data.image;
+    this.passwordHash = data.passwordHash;
+    this.bio = data.bio;
   }
 }

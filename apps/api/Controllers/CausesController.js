@@ -1,13 +1,12 @@
 const { BaseController } = require("./BaseController");
-const johnsonsCause = require("../Models/Mocks/Causes/CauseMockJohnsons.json");
-const williamsCause = require("../Models/Mocks/Causes/CauseMockWilliams.json");
+const CauseMocks = require("../Models/Mocks/Causes/index");
 
 class CausesController extends BaseController {
   async get(request, response) {
-    return response.send({ causes: [johnsonsCause, williamsCause] });
+    const causes = Object.values(CauseMocks);
+    return response.send({ data: causes });
   }
 }
 
 const causesController = new CausesController();
 module.exports = causesController;
-// module.exports = new CausesController();

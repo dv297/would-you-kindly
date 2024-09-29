@@ -1,3 +1,3 @@
-class PostCauseController {}
+class PostCauseContract {}
 
-module.exports = { PostCauseController };
+module.exports = { PostCauseContract };
