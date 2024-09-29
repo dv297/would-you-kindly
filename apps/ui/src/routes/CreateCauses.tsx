@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SubmitHandler, useForm, UseFormRegister } from "react-hook-form";
 import { Label } from "@radix-ui/react-label";
 import { useMutation } from "@tanstack/react-query";
@@ -37,10 +38,10 @@ const FormTextArea = ({ register, field, label }: InputProps) => {
   );
 };
 
-const FormImageInput = () =>{
+const FormImageInput = (props: { onImageUploaded: (cid: string) => void}) =>{
   return(
     <div className="grid w-full items-center gap-1.5">
-      <ImageUpload/>
+      <ImageUpload onImageUploaded={props.onImageUploaded}/>
     </div>
   );
 };
@@ -48,15 +49,17 @@ const FormImageInput = () =>{
 
 const CreateCause = () => {
   const { handleSubmit, register } = useForm<Inputs>();
+  const [cid, setSid] = useState("");
   const mutation = useMutation({
     mutationKey: ["causes"],
     mutationFn: async (data: Inputs) => {
+      console.log(cid);
       const response = await fetch("/api/causes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, cid }),
       });
 
       if (!response.ok) {
@@ -84,7 +87,7 @@ const CreateCause = () => {
               field="description"
               label="Description"
             />
-            <FormImageInput register={register} field="body" label="Image URL"/>
+            <FormImageInput register={register} field="body" label="Image URL" onImageUploaded={setSid}/>
             <FormTextArea register={register} field="body" label="Body" />
             <div className="mt-4">
               <Button type="submit">Submit</Button>

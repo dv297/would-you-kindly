@@ -1,28 +1,57 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
+import { Button } from "@/components/ui/button.tsx";
 
-const ImageUpload = () => {
-  const [image, setImage] = useState(null);
+interface Props{
+  onImageUploaded: (cid: string) => void;
+}
+const ImageUpload = (props: Props) => {
+  const { onImageUploaded } = props;
+  const [setImage] = useState(null);
   const [preview, setPreview] = useState(null);
-
+  const imgRef = useRef()
   const handleChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       setImage(file);
       setPreview(URL.createObjectURL(file));
+      imgRef.current = file;
     }
   };
 
+  const JWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI5OWYwM2VhYS0zZDMyLTRlZTctOGMxZi02MWJjMmE1ZjU0NjQiLCJlbWFpbCI6Imx0YmFsbGFyZWpvbmVzNzhAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjEsImlkIjoiRlJBMSJ9LHsiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjEsImlkIjoiTllDMSJ9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjUzM2I0MGQ5ZDVkNWZlMTMxN2I0Iiwic2NvcGVkS2V5U2VjcmV0IjoiMzE4ZWVlOGQxN2UzYzA2YmY1MGQyODY0MmZkODRjNzhhY2M1ODZiYTA1NzdkNWQxZWJlZWU4MjFhM2M5OGI4OSIsImV4cCI6MTc1OTEyMDI0NH0.wlfJat9d2dZaesAi3zApLXDJRAzAsi-URJJSBCqYQB8";
+  async function pinFileToIPFS(img) {
+    try {
+      const formData = new FormData();
+      const file = new File([img], img.name, { type: img.type });
+      formData.append("file", file);
+
+      const request = await fetch("https://uploads.pinata.cloud/v3/files", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${JWT}`
+        },
+        body: formData,
+      });
+      const response = await request.json();
+      onImageUploaded(response.data.cid);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const handleSubmit = (event) => {
+    const file = imgRef.current
     event.preventDefault();
-    // Handle the image upload logic here, e.g., sending it to a server
-    console.log('Image to upload:', image);
+    pinFileToIPFS(file).then();
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form >
         <input type="file" accept="image/*" onChange={handleChange} />
+        <Button onClick={handleSubmit}>Upload</Button>
       </form>
       {preview && (
         <div>
@@ -33,5 +62,6 @@ const ImageUpload = () => {
     </div>
   );
 };
+
 
 export default ImageUpload;
