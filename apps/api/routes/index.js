@@ -28,7 +28,7 @@ router.post("/causes", (req, res) => {
 });
 
 // Cause
-router.get("/cause/:id", causeController.get);
+router.get("/causes/:id", causeController.get);
 
 router.post("/cause", causeController.post);
 
