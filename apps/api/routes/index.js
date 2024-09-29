@@ -1,10 +1,7 @@
 const express = require("express");
 const { v4: uuid } = require("uuid");
-<<<<<<< HEAD
-const { getCollection } = require("../mongo/MongoClient");
-=======
 const multer = require("multer");
->>>>>>> 5450248 (pinata integration)
+const { getCollection } = require("../mongo/MongoClient");
 const suggestionsController = require("../Controllers/SuggestionsController");
 const profileController = require("../Controllers/ProfileController");
 const causesController = require("../Controllers/CausesController");
