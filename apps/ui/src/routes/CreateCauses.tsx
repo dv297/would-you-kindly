@@ -2,6 +2,7 @@ import { SubmitHandler, useForm, UseFormRegister } from "react-hook-form";
 import { Label } from "@radix-ui/react-label";
 import { useMutation } from "@tanstack/react-query";
 
+import ImageUpload from "@/components/ImageUpload/ImageUpload.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
@@ -36,6 +37,15 @@ const FormTextArea = ({ register, field, label }: InputProps) => {
   );
 };
 
+const FormImageInput = () =>{
+  return(
+    <div className="grid w-full items-center gap-1.5">
+      <ImageUpload/>
+    </div>
+  );
+};
+
+
 const CreateCause = () => {
   const { handleSubmit, register } = useForm<Inputs>();
   const mutation = useMutation({
@@ -68,12 +78,13 @@ const CreateCause = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col justify-normal items-start gap-4"
           >
-            <FormTextInput register={register} field="title" label="Title" />
+            <FormTextInput register={register} field="title" label="Title"/>
             <FormTextInput
               register={register}
               field="description"
               label="Description"
             />
+            <FormImageInput register={register} field="body" label="Image URL"/>
             <FormTextArea register={register} field="body" label="Body" />
             <div className="mt-4">
               <Button type="submit">Submit</Button>
