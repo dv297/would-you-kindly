@@ -20,6 +20,5 @@ module.exports = {
     "no-unused-vars": "off", // ["error", { argsIgnorePattern: "next" }],
     "no-console": "off",
     "arrow-body-style": "off",
-    "no-undef": "off", // off for now while we are building out functionality
   },
 };
