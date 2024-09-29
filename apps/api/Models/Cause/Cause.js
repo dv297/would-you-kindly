@@ -4,8 +4,8 @@ class Cause {
     this.title = data.title;
     this.description = data.description;
     this.body = data.body;
-    this.whishlistUrl = whishlistUrl;
-    this.image = image;
-    this.state = state;
+    this.whishlistUrl = data.whishlistUrl;
+    this.image = data.image;
+    this.state = data.state;
   }
 }
