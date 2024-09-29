@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const logger = require("morgan");
 
+const generateSummary = require("./ai/generateSummary");
 const indexRouter = require("./routes/index");
 
 const port = 3000;
@@ -16,6 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/", indexRouter);
+
+app.get("/ai", () => {
+  generateSummary();
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
