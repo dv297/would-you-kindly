@@ -1,5 +1,6 @@
 const express = require("express");
 const { v4: uuid } = require("uuid");
+const generateSummary = require("../ai/generateSummary");
 const { getCollection } = require("../mongo/MongoClient");
 const suggestionsController = require("../Controllers/SuggestionsController");
 const profileController = require("../Controllers/ProfileController");
@@ -51,5 +52,14 @@ router.post("/profile", profileController.post);
 router.put("/profile", profileController.put);
 
 router.delete("/profile", profileController.delete);
+
+router.get("/ai/suggestion/:id", async (req, res) => {
+  const result = await generateSummary(req.params.id);
+  res.json({
+    data: {
+      summary: result,
+    },
+  });
+});
 
 module.exports = router;

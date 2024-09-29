@@ -29,7 +29,11 @@ const CausesList = (props: Props) => {
                 </Link>
                 <CardDescription>{cause.description}</CardDescription>
               </CardHeader>
-              <CardContent dangerouslySetInnerHTML={{ __html: cause.body }} />
+              <CardContent
+                dangerouslySetInnerHTML={{
+                  __html: cause.summary ? cause.summary : cause.body,
+                }}
+              />
             </Card>
           </div>
         );

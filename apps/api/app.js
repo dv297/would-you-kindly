@@ -6,7 +6,6 @@ const cors = require("cors");
 const logger = require("morgan");
 
 const { MongoClient } = require("./mongo/MongoClient");
-const generateSummary = require("./ai/generateSummary");
 const indexRouter = require("./routes/index");
 
 const port = 3000;
@@ -19,10 +18,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/", indexRouter);
-
-app.get("/ai", () => {
-  generateSummary();
-});
 
 async function main() {
   if (

@@ -15,6 +15,7 @@ import Home from "@/routes/Home";
 import Login from "@/routes/Login.tsx";
 import Logout from "@/routes/Logout.tsx";
 import Profile from "@/routes/Profile";
+import Suggestions from "@/routes/Suggestions.tsx";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-cause" element={<CreateCause />} />
           <Route path="/causes">
+            <Route path=":id/suggestion" element={<Suggestions />} />
             <Route path=":id" element={<CauseDetails />} />
           </Route>
           <Route path="/login" element={<Login />} />
