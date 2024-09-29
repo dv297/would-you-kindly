@@ -7,9 +7,10 @@
     "./apps/api"
   ],
   "scripts": {
-    "dev": "npm-run-all --parallel dev:ui dev:api",
+    "dev": "npm-run-all --parallel dev:ui dev:api dev:db",
     "dev:ui": "npm run dev --workspace=ui",
     "dev:api": "npm run dev --workspace=api",
+    "dev:db": "docker-compose up -d",
     "check": "npm run check --workspaces",
     "generate:component": "npm run generate:component --workspace=ui",
     "prepare": "husky"
