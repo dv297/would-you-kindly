@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const Cause = z.object({
-  id: z.string(),
+  _id: z.string(),
   title: z.string(),
   description: z.string(),
   body: z.string(),

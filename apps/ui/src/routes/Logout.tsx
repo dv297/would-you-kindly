@@ -10,7 +10,7 @@ const Logout = () => {
     logout().then(() => {
       navigate("/", { replace: true });
     });
-  }, [logout]);
+  }, [navigate, logout]);
 
   return null;
 };

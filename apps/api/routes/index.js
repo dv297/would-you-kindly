@@ -1,7 +1,7 @@
 const express = require("express");
 const { v4: uuid } = require("uuid");
+const { getCollection } = require("../mongo/MongoClient");
 const suggestionsController = require("../Controllers/SuggestionsController");
-const causeController = require("../Controllers/CauseController");
 const profileController = require("../Controllers/ProfileController");
 const causesController = require("../Controllers/CausesController");
 
@@ -12,29 +12,29 @@ router.get("/", (req, res, next) => {
   res.json({ message: "Health Check Success" });
 });
 
-// causes
-router.get("/causes", causesController.get);
+router.post("/seed", async (req, res) => {
+  const collection = getCollection();
+  // eslint-disable-next-line global-require
+  const mockCause1 = require("../Models/Mocks/Causes/CauseMock1.json");
+  // eslint-disable-next-line global-require
+  const mockCause2 = require("../Models/Mocks/Causes/CauseMock2.json");
 
-router.post("/causes", (req, res) => {
-  console.log("hit", req.body);
-  const data = {
-    ...req.body,
-    id: uuid(),
-  };
-
-  mockList.push(data);
-  res.json({ status: "success" });
-  causesController.get();
+  await collection.insertMany([
+    mockCause1,
+    mockCause2,
+    mockCause1,
+    mockCause1,
+    mockCause1,
+  ]);
+  return res.status(200).json({ message: "Success" });
 });
 
 // Cause
-router.get("/causes/:id", causeController.get);
-
-router.post("/cause", causeController.post);
-
-router.put("/cause", causeController.put);
-
-router.delete("/cause/:id", causeController.delete);
+router.get("/causes", causesController.get);
+router.post("/causes", causesController.post);
+router.get("/causes/:id", causesController.getById);
+router.put("/causes", causesController.put);
+router.delete("/causes/:id", causesController.delete);
 
 router.get("/cause/:id/suggestions", suggestionsController.get);
 

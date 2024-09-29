@@ -1,11 +1,7 @@
-const CauseMockJohnsons = require("./CauseMockJohnsons.json");
-const CauseMockJohnsons2 = require("./CauseMockJohnsons2.json");
-const CauseMockJohnsons3 = require("./CauseMockJohnsons3.json");
-const CauseMockWilliams = require("./CauseMockWilliams.json");
+const CauseMock1 = require("./CauseMock1.json");
+const CauseMock2 = require("./CauseMock2.json");
 
 module.exports = {
-  CauseMockJohnsons,
-  CauseMockWilliams,
-  CauseMockJohnsons2,
-  CauseMockJohnsons3,
+  CauseMock1,
+  CauseMock2,
 };

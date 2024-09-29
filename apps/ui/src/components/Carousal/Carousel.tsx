@@ -22,7 +22,7 @@ const CarouselComp = (props: Props) => {
       <Carousel>
         <CarouselContent>
           {causes.map((cause) => (
-            <CarouselItem key={cause.id} className="md:basis-1/4 lg:basis-1/4 pl-12">
+            <CarouselItem key={cause._id} className="md:basis-1/4 lg:basis-1/4 pl-12">
               <div
                 style={{
                   backgroundImage: `url(${cause.image})`,
@@ -42,14 +42,14 @@ const CarouselComp = (props: Props) => {
                 >
                   <div className="flex-grow">
                     <Link
-                      to={`/causes/${cause.id}`}
+                      to={`/causes/${cause._id}`}
                       className="text-white text-lg flex-grow h-full"
                     >
                       {cause.title}
                     </Link>
                   </div>
                   <div>
-                    <Link to={`/causes/${cause.id}`} className="text-lg">
+                    <Link to={`/causes/${cause._id}`} className="text-lg">
                       <Button className="w-full bg-yellow-600 hover:bg-yellow-700">
                         Learn More
                       </Button>
