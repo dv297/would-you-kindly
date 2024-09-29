@@ -1,9 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const logger = require("morgan");
 
+const MongoClient = require("./mongo/MongoClient");
 const generateSummary = require("./ai/generateSummary");
 const indexRouter = require("./routes/index");
 
@@ -22,6 +24,24 @@ app.get("/ai", () => {
   generateSummary();
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+async function main() {
+  if (
+    !process.env.MONGODB_URL ||
+    !process.env.MONGODB_DATABASE_NAME ||
+    !process.env.MONGODB_COLLECTION_NAME
+  ) {
+    throw new Error(
+      "MongoDB environment variables are missing. Ensure a .env is defined",
+    );
+  }
+
+  await MongoClient.connect();
+
+  console.log("MongoDB Connected");
+
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+  });
+}
+
+main();
