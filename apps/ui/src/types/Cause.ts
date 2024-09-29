@@ -7,6 +7,7 @@ const Cause = z.object({
   body: z.string(),
   image: z.string(),
   wishlistUrl: z.string(),
+  summary: z.string(),
 });
 
 export default Cause;
