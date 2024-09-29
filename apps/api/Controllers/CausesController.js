@@ -30,8 +30,11 @@ class CausesController extends BaseController {
 
   async post(request, response) {
     const collection = getCollection();
-    await collection.insertOne(request.body);
-    return response.status(200).json({ status: "Success" });
+    const result = await collection.insertOne(request.body);
+    console.log(result);
+    return response
+      .status(200)
+      .json({ status: "Success", id: result.insertedId.toString() });
   }
 
   async delete(request, response) {

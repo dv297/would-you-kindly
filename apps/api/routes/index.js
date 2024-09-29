@@ -1,6 +1,7 @@
 const express = require("express");
 const { v4: uuid } = require("uuid");
 const multer = require("multer");
+const generateSummary = require("../ai/generateSummary");
 const { getCollection } = require("../mongo/MongoClient");
 const suggestionsController = require("../Controllers/SuggestionsController");
 const profileController = require("../Controllers/ProfileController");
@@ -58,5 +59,14 @@ router.delete("/profile", profileController.delete);
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 router.post("/image", upload.single("file"), imageController.post);
+
+router.get("/ai/suggestion/:id", async (req, res) => {
+  const result = await generateSummary(req.params.id);
+  res.json({
+    data: {
+      summary: result,
+    },
+  });
+});
 
 module.exports = router;

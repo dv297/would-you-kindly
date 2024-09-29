@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm, UseFormRegister } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { Label } from "@radix-ui/react-label";
 import { useMutation } from "@tanstack/react-query";
 
@@ -37,17 +38,17 @@ const FormTextArea = ({ register, field, label }: InputProps) => {
   );
 };
 
-const FormImageInput = () =>{
-  return(
+const FormImageInput = () => {
+  return (
     <div className="grid w-full items-center gap-1.5">
-      <ImageUpload/>
+      <ImageUpload />
     </div>
   );
 };
 
-
 const CreateCause = () => {
   const { handleSubmit, register } = useForm<Inputs>();
+  const navigate = useNavigate();
   const mutation = useMutation({
     mutationKey: ["causes"],
     mutationFn: async (data: Inputs) => {
@@ -63,10 +64,18 @@ const CreateCause = () => {
         console.log(response.statusText);
         throw new Error("Could not create cause");
       }
+
+      const responseJson = await response.json();
+
+      if (import.meta.env.VITE_ENABLE_AI_SUGGESTION) {
+        navigate(`/causes/${responseJson.id}/suggestion`);
+      } else {
+        navigate("/");
+      }
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     mutation.mutate(data);
   };
 
@@ -78,13 +87,17 @@ const CreateCause = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col justify-normal items-start gap-4"
           >
-            <FormTextInput register={register} field="title" label="Title"/>
+            <FormTextInput register={register} field="title" label="Title" />
             <FormTextInput
               register={register}
               field="description"
               label="Description"
             />
-            <FormImageInput register={register} field="body" label="Image URL"/>
+            <FormImageInput
+              register={register}
+              field="body"
+              label="Image URL"
+            />
             <FormTextArea register={register} field="body" label="Body" />
             <div className="mt-4">
               <Button type="submit">Submit</Button>
