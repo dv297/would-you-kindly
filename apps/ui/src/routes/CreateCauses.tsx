@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SubmitHandler, useForm, UseFormRegister } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Label } from "@radix-ui/react-label";
@@ -38,16 +39,17 @@ const FormTextArea = ({ register, field, label }: InputProps) => {
   );
 };
 
-const FormImageInput = () => {
+const FormImageInput = (props: { onImageUploaded: (cid: string) => void }) => {
   return (
     <div className="grid w-full items-center gap-1.5">
-      <ImageUpload />
+      <ImageUpload onImageUploaded={props.onImageUploaded} />
     </div>
   );
 };
 
 const CreateCause = () => {
   const { handleSubmit, register } = useForm<Inputs>();
+  const [cid, setSid] = useState("");
   const navigate = useNavigate();
   const mutation = useMutation({
     mutationKey: ["causes"],
@@ -57,7 +59,7 @@ const CreateCause = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, cid }),
       });
 
       if (!response.ok) {
@@ -97,6 +99,7 @@ const CreateCause = () => {
               register={register}
               field="body"
               label="Image URL"
+              onImageUploaded={setSid}
             />
             <FormTextArea register={register} field="body" label="Body" />
             <div className="mt-4">

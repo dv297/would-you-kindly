@@ -20,13 +20,13 @@ router.post("/seed", async (req, res) => {
   /* eslint-disable global-require */
   const mockCause1 = require("../Models/Mocks/Causes/CauseMock1.json");
   const mockCause2 = require("../Models/Mocks/Causes/CauseMock2.json");
-  /* eslint-enable global-require */
+  const mockCause3 = require("../Models/Mocks/Causes/CauseMock3.json");
 
   try {
     await collection.insertMany([
       mockCause1,
       mockCause2,
-      mockCause1,
+      mockCause3,
       mockCause1,
       mockCause1,
     ]);
