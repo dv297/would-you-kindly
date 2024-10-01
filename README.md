@@ -17,10 +17,10 @@ Ensure you have reviewed the [Rules & FAQ](https://hackmidwest.com/#faq)
 
 _List the full names, email address & Github username of your teammates_
 
-1. Daniel Vu | daniel.vu@mckesson.com
-2. Logan Ballares-Jones | logan.ballare-jones@mckesson.com
-3. Nehemiah Deason | nehemiah.deason@mckesson.com
-4. Cole Skoviak | cole.skoviak@mckesson.com
+1. Daniel Vu
+2. Logan Ballares-Jones
+3. Nehemiah Deason
+4. Cole Skoviak
 
 <br /><br />
 
